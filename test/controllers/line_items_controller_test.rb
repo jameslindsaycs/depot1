@@ -47,4 +47,13 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to cart_path(assigns(:line_item).cart)
   end
+
+  test "should create line item via ajax" do
+    assert_difference('LineItem.count') do
+      post line_items_url, params: { product_id: products(:one).id },
+           xhr: true
+    end
+    assert_response :success
+  end
+
 end
