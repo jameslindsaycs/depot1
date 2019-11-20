@@ -12,6 +12,9 @@
   <body>
   <body>
   <header class="main">
+  <%= image_tag 'logo.png', alt: 'The Pragmatic Bookshelf' %>
+  <h1><%= @page_title %></h1>
+</header>
   <section class="content">
   <nav class="side_nav">
     <ul>
@@ -30,9 +33,7 @@
 
   </nav>
 
-  <%= image_tag 'logo.png', alt: 'The Pragmatic Bookshelf' %>
-  <h1><%= @page_title %></h1>
-</header>
+  
   <%= content_tag :main, class: controller.controller_name do %>
     <%= yield %>
   <% end %>
